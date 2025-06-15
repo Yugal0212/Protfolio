@@ -1,0 +1,146 @@
+
+    /* Footer General Styles */
+    .footer {
+        background: linear-gradient(to right, #00031c, #06111c); /* Darker gradient for sleek effect */
+        color: #ffffff;
+        padding: 4rem 2rem;
+        animation: fadeIn 2s ease-out; 
+    }
+
+    /* Footer Title Styling */
+    .footer-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #ff4c4c; /* Vibrant red */
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #ff4c4c;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        animation: lineAnimation 0.4s forwards;
+    }
+
+    /* Footer Paragraph Styling */
+    .footer p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        opacity: 0;
+        animation: fadeInText 1.5s forwards;
+        animation-delay: 1s; /* Delay animation for smooth effect */
+    }
+
+    /* Footer Link Styling */
+    .footer a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+    }
+
+    .footer a:hover {
+        color: #ff4c4c; /* Red hover color */
+        text-decoration: underline;
+        letter-spacing: 1px; /* Slightly increase spacing on hover */
+    }
+
+    /* Footer Links List */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-links li a {
+        font-size: 1rem;
+    }
+
+    /* Social Icons Styling */
+    .social-icons {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .social-icons li {
+        display: inline-block;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+        color: #ffffff;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #ff4c4c;
+        transform: scale(1.3); /* Icon scale effect */
+    }
+
+    /* Footer Bottom Styles */
+    .footer-bottom {
+        font-size: 1rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 1rem;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInText 1.5s forwards;
+        animation-delay: 2s; /* Delay for a smooth fade-in */
+    }
+
+    /* Footer Designer Styling */
+    .footer-designer {
+        font-weight: bold;
+        color: #ff4c4c;
+        transition: color 0.3s ease;
+    }
+
+    .footer-designer:hover {
+        color: #ffffff;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInText {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes lineAnimation {
+        0% {
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+        100% {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }

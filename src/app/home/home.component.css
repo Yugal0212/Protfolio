@@ -1,0 +1,243 @@
+/* Full-Screen Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;  
+    background: linear-gradient(to right, #00031c, #0d253d);  
+    backdrop-filter: blur(30px);
+    color: #fff;
+    padding: 3rem;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Hero Content Layout */
+.hero .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 2; 
+}
+
+/* Left Side (Text) */
+.hero .hero-text {
+    max-width: 50%;
+    z-index: 2;
+}
+
+.hero .hero-text h1 {
+    font-size: 4vw;  
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: slideIn 2s ease-out;
+}
+
+.hero .hero-text .highlight {
+    color: #ff4c4c; 
+}
+
+.hero .hero-text p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-out 0.5s;
+}
+
+
+.hero .hero-text .additional-content {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+    animation: fadeIn 2s ease-out 1s;
+}
+
+/* Social Media Icons Styling */
+/* Social Media Icons Section */
+.social-icons {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: center;
+    gap: 15px; /* Space between icons */
+    margin-top: 1.5rem; /* Add space above the icons */
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; 
+    height: 50px;
+    font-size: 1.5rem; 
+    border-radius: 50%; /* Circular shape */
+    color: #fff; /* Default icon color */
+    background: linear-gradient(145deg, #1a202e, #ff4c4c);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6), 
+    -5px -5px 10px rgba(50, 50, 50, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: linear-gradient(145deg, #1a202e, #ff4c4c);
+    transform: translateY(-8px); 
+    box-shadow: 0px 4px 15px rgba(255, 76, 76, 0.8);
+    color: #fff;
+}
+
+.social-icon i {
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover i {
+    transform: rotate(360deg); /* Rotate icon on hover */
+}
+
+/* Custom Icons for Different Platforms */
+.social-icon.github {
+    background: linear-gradient(145deg, #24292e, #18191a);
+}
+
+.social-icon.facebook {
+    background: linear-gradient(145deg, #3b5998, #2d4373);
+}
+
+.social-icon.instagram {
+    background: linear-gradient(145deg, #e1306c, #c13584);
+}
+
+.social-icon.linkedin {
+    background: linear-gradient(145deg, #0077b5, #005c91);
+}
+
+.social-icon:hover.github {
+    background: linear-gradient(145deg, #18191a, #24292e);
+}
+
+.social-icon:hover.facebook {
+    background: linear-gradient(145deg, #2d4373, #3b5998);
+}
+
+.social-icon:hover.instagram {
+    background: linear-gradient(145deg, #c13584, #e1306c);
+}
+
+.social-icon:hover.linkedin {
+    background: linear-gradient(145deg, #005c91, #0077b5);
+}
+
+
+/* Hero Button Styling */
+.hero .hero-text .btn {
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+    margin-top: 20px;
+}
+
+.hero .hero-text .btn:hover {
+    background-color: #ff4c4c;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Side (Image or Graphic) */
+.hero .hero-image {
+    max-width: 50%;
+    position: relative;
+    margin-left: 10rem; 
+}
+
+.hero .hero-img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    filter: brightness(1.1);
+}
+
+/* Animation for Hero Heading (Slide In) */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for Subheading and Button (Fade In) */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero .hero-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero .hero-image {
+        max-width: 80%;  /* Adjust image size on smaller screens */
+        margin-top: 2rem;
+    }
+
+    .hero .hero-text h1 {
+        font-size: 6vw;  /* Responsive font size */
+    }
+
+    .hero .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .hero .hero-text .btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .hero .hero-text .additional-content {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+    }
+    .social-icons {
+        justify-content: center; /* Center-align icons for smaller screens */
+        gap: 12px;
+    }
+
+    .social-icon {
+        width: 40px; /* Smaller size for icons on smaller screens */
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  

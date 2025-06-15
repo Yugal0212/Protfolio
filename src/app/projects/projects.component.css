@@ -1,0 +1,395 @@
+/* Projects Section */
+.projects-section {
+    padding: 5rem 0;
+    background: linear-gradient(to right, #00031c, #0d253d); /* Dark gradient */
+    color: #ffffff;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Title Styling */
+.projects-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: #ff477e; /* Title color */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+}
+
+.projects-title::after {
+    content: "";
+    width: 100px;
+    height: 4px;
+    background: #ff477e;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 5px;
+}
+
+.projects-subtitle {
+    font-size: 1.3rem;
+    color: #aaa; /* Lighter subtitle */
+    text-align: center;
+    margin-bottom: 4rem;
+    font-style: italic;
+}
+
+/* Project Card Styling */
+.project-card {
+    background: rgba(44, 62, 80, 0.9); /* Semi-transparent dark background */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 71, 126, 0.3), rgba(255, 104, 137, 0.1));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+    z-index: -1;
+}
+
+/* Image Styling */
+.project-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 4px solid #ff477e;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.08);
+    filter: brightness(1.3);
+}
+
+/* Content Styling */
+.project-content {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff477e;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.project-title::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #ff477e;
+    display: block;
+    margin: 0.5rem auto;
+    border-radius: 5px;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* Button Styling */
+.project-content .btn {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    margin-right: 0.5rem;
+    border-radius: 30px;
+    position: relative; 
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    z-index: 10;
+    letter-spacing: 1px;
+}
+
+.project-content .btn-primary {
+    background: linear-gradient(135deg, #ff477e, #ff6889);
+    border: none;
+    box-shadow: 0 5px 15px rgba(255, 71, 126, 0.6);
+}
+
+.project-content .btn-primary:hover {
+    background: linear-gradient(135deg, #ff6889, #ff477e);
+    box-shadow: 0 8px 25px rgba(255, 71, 126, 0.8);
+    transform: translateY(-3px);
+}
+
+.project-content .btn-outline-secondary {
+    background: none;
+    border: 2px solid #ff477e;
+    color: #ff477e;
+    transition: all 0.3s ease;
+}
+
+.project-content .btn-outline-secondary:hover {
+    background: #ff477e;
+    color: #fff;
+    border: 2px solid #ff477e;
+    transform: translateY(-3px);
+}
+
+/* Grid Layout: Two cards per row */
+.projects-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.projects-section .col-md-6 {
+    width: 48%; /* Two cards per row */
+    margin-bottom: 3rem;
+}
+
+/* Project Card Responsive Design */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .projects-title {
+        font-size: 2.5rem;
+    }
+
+    .projects-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .project-card {
+        margin-bottom: 2rem;
+    }
+
+    .project-content .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    .projects-section .col-md-6 {
+        width: 100%; /* Single card per row on small screens */
+    }
+}
+
+/* Keyframe Animation for Card Hover */
+@keyframes highlight {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Subtle Hover Animation */
+.project-card:hover {
+    animation: highlight 0.8s ease;
+    transform: scale(1.05);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    z-index: 1; /* Ensure the buttons stay on top */
+
+    
+}
+
+
+/*skill section */
+/* Skills Section */
+.skills-section {
+    color: #333; /* Dark text color for contrast */
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ff477e;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(255, 71, 126, 0.3);
+    position: relative;
+}
+
+.skills-title::after {
+    content: "";
+    width: 90px;
+    height: 3px;
+    background: #ff477e;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 5px;
+}
+
+.skills-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-item {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ff477e;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.skill-item:hover {
+    background: #ff477e;
+    color: #fff;
+    border-color: #ff477e;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 71, 126, 0.5);
+}
+
+.skill-item i {
+    font-size: 1.5rem;
+    color: #ff477e;
+    transition: color 0.3s ease;
+}
+
+.skill-item:hover i {
+    color: #fff;
+}
+
+
+/* Stats Section */
+
+.stats-section {
+    color: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 2px solid #ff477e;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ff6889;
+    margin-bottom: 0.5rem;
+    text-shadow: 3px 3px 8px rgba(255, 71, 126, 0.8);
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.stat-number:hover {
+    transform: scale(1.2);
+    color: #ff477e;
+    text-shadow: 5px 5px 15px rgba(255, 71, 126, 1);
+}
+
+.stat-description {
+    font-size: 1.3rem;
+    color: #ddd;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.stats-section .col-md-4 {
+    margin-bottom: 2rem;
+}
+
+/* Add subtle hover animation to the entire stats block */
+.stats-section .col-md-4:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(255, 71, 126, 0.4);
+    border-radius: 10px;
+}
+
+
+/* Marquee Section Styling */
+.projects-marquee {
+    width: 100%;
+    background-color: #0d253d; /* Dark background to match the theme */
+    padding: 1rem 0;
+    overflow: hidden;
+    margin-bottom: 3rem; /* Space between marquee and "My Projects" section */
+}
+
+.marquee-content {
+    display: flex;
+    animation: marquee 20s linear infinite; /* Animation for scrolling text */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff477e;
+    text-transform: uppercase;
+    white-space: nowrap;
+    gap: 3rem; /* Space between project names */
+}
+
+.marquee-item {
+    padding: 0 2rem;
+    display: inline-block;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Marquee Hover Effect */
+.projects-marquee:hover .marquee-content {
+    animation-play-state: paused; /* Pause marquee on hover */
+}

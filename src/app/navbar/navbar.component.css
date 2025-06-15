@@ -1,0 +1,161 @@
+/* Custom Navbar Styling with Glassmorphism */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+.activecolor {
+    color: #00d9f8 !important; 
+    position: relative;
+}
+
+.activecolor::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initial width for animation */
+    height: 2px;
+    background-color: #00d9f8;
+    transition: width 0.5s ease-in-out; /* Smooth transition */
+    animation: underlineExpand 0.5s forwards; /* Animation for underline on activation */
+}
+
+.activecolor:hover::after {
+    width: 100%; 
+}
+
+/* Keyframe Animation for Active Link Underline */
+@keyframes underlineExpand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.custom-navbar {
+    background: linear-gradient(to right, #00031c, #06111c); /* Dark Blue Gradient */
+    backdrop-filter: blur(10px); 
+    padding: 1rem 2rem;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: 80px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+/* Navbar Brand Styling */
+.custom-navbar .navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.custom-navbar .navbar-brand img {
+    border-radius: 60%;
+    border: 2px solid #fff;
+}
+
+/* Brand Name Styling */
+.custom-navbar .brand-name {
+    color: #f1f1f1; 
+    text-transform: uppercase;
+}
+
+/* Navbar Links */
+.custom-navbar .nav-link {
+    color: #f1f1f1; /* Light gray for links */
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    position: relative;
+    transition: color 0.4s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #00d9f8; 
+}
+
+.custom-navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Dropdown Menu */
+.custom-navbar .nav-item.dropdown:hover .nav-link {
+    color: #00d9f8;
+}
+
+.custom-navbar .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.4rem;
+    vertical-align: middle; 
+    content: '\25BC'; /* Unicode for downwards triangle */
+    font-size: 0.6rem;
+    transition: transform 0.3s ease;
+}
+.custom-navbar .nav-item.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg); /* Rotate icon on hover */
+}
+.custom-navbar .dropdown-menu {
+    background-color: rgba(32, 32, 32, 0.9); 
+    border-radius: 8px;
+    border: none;
+    z-index: 1051;
+}
+
+/* Dropdown Item Styling */
+.custom-navbar .dropdown-item {
+    color: #f1f1f1;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.custom-navbar .dropdown-item:hover {
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+/* Buttons Styling */
+.custom-navbar .btn-outline-danger {
+    color: #e74c3c;
+    border-color: #e74c3c;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar .btn-outline-danger:hover {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.custom-navbar .btn-danger {
+    background-color: #e74c3c;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar .btn-danger:hover {
+    background-color: #c0392b; 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .custom-navbar .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .custom-navbar .nav-link {
+        font-size: 1rem;
+    }
+
+    .custom-navbar .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+}

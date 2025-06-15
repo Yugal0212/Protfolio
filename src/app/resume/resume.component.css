@@ -1,0 +1,285 @@
+/* Main Container */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 90px 70px;
+    flex-wrap: wrap;
+    background: linear-gradient(to right, #00031c, #0d253d); /* Left and right background gradient */
+    color: #ffffff;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-out;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Form Container (Frosted Glass Effect) */
+.form-container {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Soft border */
+    position: relative;
+    width: 100%;
+    color: #2c3e50; 
+}
+
+/* Data Container (Frosted Glass Effect) */
+.data-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px); /* Subtle blur effect */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: #2c3e50;
+    height: auto; 
+}
+
+/* Title for Preview Data */
+.data-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #34495e;
+}
+
+/* Data Content Wrapper */
+.data-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Section Headers */
+h4 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2980b9; /* Blue accent */
+    margin-bottom: 20px;
+}
+
+/* Preview Card for Personal Details */
+.preview-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.preview-card p {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #34495e;
+}
+
+.preview-card strong {
+    font-weight: 600;
+    color: #2980b9; /* Blue for labels */
+}
+
+/* Education Table */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    min-width: 600px; /* Ensure proper width for all columns */
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    color: #2c3e50;
+    word-wrap: break-word; /* Ensure content doesn't overflow */
+}
+
+table th {
+    background-color: #2980b9;
+    color: white;
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Education Section (No Education) */
+#noEducation {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+
+
+/* Titles */
+.form-title,
+.data-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #34495e; /* Dark text color */
+}
+
+.form-title {
+    font-size: 2.5rem;
+}
+
+.data-title {
+    font-size: 1.8rem;
+}
+
+/* Form Labels */
+label {
+    font-weight: 600;
+    color: #34495e; /* Dark label color */
+}
+
+/* Form Controls */
+.form-control {
+    background-color: #fdfdfd;
+    border: 1px solid #dcdfe6;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 10px rgba(41, 128, 185, 0.6);
+    border-color: #2980b9;
+    outline: none;
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+    background-color: #fdfdfd;
+    border: 1px solid #dcdfe6;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+textarea:focus {
+    box-shadow: 0 0 10px rgba(41, 128, 185, 0.6);
+    border-color: #2980b9;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(to right, #3498db, #5dade2);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: transform 0.2s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 80px 20px;
+    }
+
+    .form-container,
+    .data-container {
+        flex: none;
+        width: 100%;
+    }
+}
+
+
+#education-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.education-entry {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.education-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.education-entry label {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.education-entry .form-control {
+    background-color: #fdfdfd;
+    border: 1px solid #dcdfe6;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.education-entry .form-control:focus {
+    box-shadow: 0 0 10px rgba(41, 128, 185, 0.6);
+    border-color: #2980b9;
+    outline: none;
+}
+
+/* Add More Button */
+#add-education {
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: transform 0.2s, box-shadow 0.3s;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#add-education:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+}
+
+/* Responsive Design for Education Section */
+@media (max-width: 768px) {
+    .education-entry {
+        padding: 15px;
+    }
+    #add-education {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
